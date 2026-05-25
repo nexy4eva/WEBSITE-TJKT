@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TJKT SMK MODERN</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <!-- Font Awesome -->
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Particles -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -25,235 +22,115 @@
   <style>
 
     *{
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    html, body{
-      overflow-x: hidden;
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
     }
 
     body{
-      background: #0f172a;
-      color: white;
-      transition: 0.4s;
-    }
-
-    img{
-      max-width: 100%;
-      display: block;
-    }
-
-    .light-mode{
-      background: #f1f5f9;
-      color: black;
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
     }
 
     .glass{
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.1);
     }
 
     .glow{
-      box-shadow: 0 0 20px rgba(6,182,212,0.5);
+      box-shadow:0 0 25px rgba(6,182,212,0.5);
     }
 
     .hero-bg{
       background:
-      linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.9)),
+      linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.95)),
       url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
 
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hover-card:hover{
-      transform: translateY(-10px);
-      transition: 0.4s;
-      box-shadow: 0 0 25px cyan;
-    }
-
-    .typing{
-      width: 100%;
-      max-width: 100%;
-      white-space: normal;
-    }
-
-    @media (min-width: 768px){
-
-      .typing{
-        border-right: 3px solid cyan;
-        white-space: nowrap;
-        overflow: hidden;
-        width: 0;
-
-        animation:
-        typing 4s steps(30,end) forwards,
-        blink .7s infinite;
-      }
-
-    }
-
-    @keyframes typing{
-      from{width:0}
-      to{width:100%}
-    }
-
-    @keyframes blink{
-      50%{
-        border-color: transparent;
-      }
-    }
-
-    .sidebar{
-      transition: 0.4s;
-    }
-
-    #progressBar{
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 4px;
-      background: cyan;
-      z-index: 9999;
-    }
-
-    #loader{
-      position: fixed;
-      inset: 0;
-      background: #020617;
-      z-index: 99999;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .spinner{
-      width: 80px;
-      height: 80px;
-      border: 5px solid cyan;
-      border-top: transparent;
-      border-radius: 50%;
-
-      animation: spin 1s linear infinite;
-      margin-bottom: 20px;
-    }
-
-    @keyframes spin{
-      100%{
-        transform: rotate(360deg);
-      }
-    }
-
-    #cursor{
-      width: 20px;
-      height: 20px;
-      border: 2px solid cyan;
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-    }
-
-    #cursorBlur{
-      width: 300px;
-      height: 300px;
-      background: rgba(6,182,212,0.15);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      filter: blur(80px);
-      z-index: 9998;
-      transform: translate(-50%, -50%);
+      background-size:cover;
+      background-position:center;
     }
 
     #particles-js{
-      position: fixed;
-      inset: 0;
-      z-index: -1;
+      position:fixed;
+      inset:0;
+      z-index:-1;
     }
 
-    /* LOGIN MODAL */
+    /* LOGIN */
 
     #loginModal{
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(10px);
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.85);
+      backdrop-filter:blur(12px);
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
 
-      z-index: 999999;
+      z-index:999999;
     }
 
     .login-box{
-      width: 90%;
-      max-width: 420px;
+      width:90%;
+      max-width:420px;
 
-      padding: 40px;
-      border-radius: 25px;
+      padding:40px;
+      border-radius:25px;
 
-      background: rgba(255,255,255,0.05);
+      background:rgba(255,255,255,0.05);
 
-      border: 1px solid rgba(6,182,212,0.3);
+      border:1px solid rgba(6,182,212,0.3);
 
-      backdrop-filter: blur(15px);
+      backdrop-filter:blur(15px);
 
-      box-shadow: 0 0 40px rgba(6,182,212,0.4);
+      box-shadow:0 0 40px rgba(6,182,212,0.4);
     }
 
     .login-input{
-      width: 100%;
-      padding: 15px;
-      margin-top: 15px;
+      width:100%;
+      padding:15px;
+      margin-top:15px;
 
-      border-radius: 14px;
-      border: 1px solid cyan;
+      border-radius:14px;
+      border:1px solid cyan;
 
-      background: #0f172a;
-      color: white;
-
-      outline: none;
+      background:#0f172a;
+      color:white;
+      outline:none;
     }
 
     .login-btn{
-      width: 100%;
-      margin-top: 20px;
-      padding: 15px;
+      width:100%;
+      margin-top:20px;
+      padding:15px;
 
-      border-radius: 14px;
-      border: none;
+      border:none;
+      border-radius:14px;
 
-      background: cyan;
-      color: black;
+      background:cyan;
+      color:black;
 
-      font-weight: bold;
-      cursor: pointer;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
     }
 
-    @media (max-width: 768px){
+    .login-btn:hover{
+      background:#22d3ee;
+    }
 
-      .hero-bg{
-        padding-top: 100px;
-        padding-bottom: 80px;
-      }
+    .hover-card{
+      transition:0.4s;
+    }
 
-      #cursor,
-      #cursorBlur{
-        display: none;
-      }
-
-      .hover-card:hover{
-        transform: none;
-      }
-
+    .hover-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 25px cyan;
     }
 
   </style>
@@ -261,311 +138,254 @@
 
 <body>
 
-  <!-- LOGIN -->
-  <div id="loginModal">
+<!-- LOGIN -->
+<div id="loginModal">
 
-    <div class="login-box">
+  <div class="login-box">
 
-      <div class="text-center">
+    <div class="text-center">
 
-        <i class="fas fa-user-lock text-5xl text-cyan-400 mb-5"></i>
+      <i class="fas fa-user-lock text-5xl text-cyan-400 mb-5"></i>
 
-        <h1 class="text-3xl font-bold text-cyan-400">
-          LOGIN TJKT
-        </h1>
+      <h1 class="text-3xl font-bold text-cyan-400">
+        LOGIN TJKT
+      </h1>
 
-        <p class="text-gray-300 mt-2">
-          Silakan login untuk masuk
-        </p>
-
-      </div>
-
-      <form id="loginForm">
-
-        <input
-          type="text"
-          id="username"
-          placeholder="Username"
-          class="login-input"
-          required>
-
-        <input
-          type="password"
-          id="password"
-          placeholder="Password"
-          class="login-input"
-          required>
-
-        <button
-          type="submit"
-          class="login-btn">
-
-          Login
-
-        </button>
-
-      </form>
-
-      <p id="loginError"
-        class="text-red-400 text-center mt-4 hidden">
-
-        Username atau Password salah
-
+      <p class="text-gray-300 mt-2">
+        Silakan login untuk masuk
       </p>
 
     </div>
 
+    <form id="loginForm">
+
+      <input
+        type="text"
+        id="username"
+        placeholder="Username"
+        class="login-input"
+        required>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        class="login-input"
+        required>
+
+      <button
+        type="submit"
+        class="login-btn">
+
+        Login
+
+      </button>
+
+    </form>
+
+    <p id="loginError"
+      class="text-red-400 text-center mt-4 hidden">
+
+      Username atau Password salah
+
+    </p>
+
+    <p class="text-center text-gray-400 mt-6 text-sm">
+      Username: TJKT-28 <br>
+      Password: BERSAMA123
+    </p>
+
   </div>
 
-  <!-- Loading -->
-  <div id="loader">
-    <div class="spinner"></div>
-    <h1 class="text-cyan-400 text-2xl font-bold">
-      Loading TJKT...
+</div>
+
+<!-- PARTICLES -->
+<div id="particles-js"></div>
+
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md">
+
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+
+    <h1 class="text-2xl font-bold text-cyan-400">
+      TJKT
     </h1>
+
+    <button id="logoutBtn"
+      class="bg-red-500 px-4 py-2 rounded-xl hidden">
+
+      Logout
+
+    </button>
+
   </div>
 
-  <!-- Progress -->
-  <div id="progressBar"></div>
+</nav>
 
-  <!-- Particles -->
-  <div id="particles-js"></div>
+<!-- HERO -->
+<section
+class="hero-bg min-h-screen flex items-center justify-center text-center px-6">
 
-  <!-- Cursor -->
-  <div id="cursor"></div>
-  <div id="cursorBlur"></div>
+  <div class="max-w-4xl">
 
-  <!-- Navbar -->
-  <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md">
+    <h1 class="text-6xl md:text-7xl font-bold text-cyan-400 mb-6 glow p-4 rounded-xl">
+      TJKT SMK MODERN
+    </h1>
 
-    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <p class="text-xl md:text-2xl text-white mb-8">
+      Generasi Ahli Jaringan Masa Depan
+    </p>
 
-      <h1 class="text-2xl font-bold text-cyan-400">
-        TJKT
-      </h1>
+  </div>
 
-      <div class="flex items-center gap-3">
+</section>
 
-        <button id="logoutBtn"
-          class="bg-red-500 px-4 py-2 rounded-xl hidden">
+<!-- PROFIL -->
+<section class="py-20 px-6">
 
-          Logout
+  <div class="max-w-6xl mx-auto">
 
-        </button>
+    <h2 class="text-4xl font-bold text-center text-cyan-400 mb-12">
+      Profil Jurusan
+    </h2>
 
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div class="glass p-6 rounded-2xl hover-card">
+        <i class="fas fa-network-wired text-4xl text-cyan-400 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-3">Networking</h3>
+        <p>Mempelajari jaringan komputer modern.</p>
+      </div>
+
+      <div class="glass p-6 rounded-2xl hover-card">
+        <i class="fas fa-server text-4xl text-cyan-400 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-3">Server</h3>
+        <p>Belajar Linux server dan cloud computing.</p>
+      </div>
+
+      <div class="glass p-6 rounded-2xl hover-card">
+        <i class="fas fa-wifi text-4xl text-cyan-400 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-3">Fiber Optic</h3>
+        <p>Instalasi dan maintenance fiber optic.</p>
       </div>
 
     </div>
 
-  </nav>
+  </div>
 
-  <!-- Hero -->
-  <section id="home"
-    class="hero-bg min-h-screen flex items-center justify-center text-center px-4 sm:px-6">
+</section>
 
-    <div class="w-full max-w-4xl">
+<!-- FOOTER -->
+<footer class="bg-slate-950 text-center py-6 border-t border-cyan-500">
+  <p>© 2026 TJKT SMK MODERN</p>
+</footer>
 
-      <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold text-cyan-400 mb-6 glow p-4 rounded-xl">
-        TJKT SMK MODERN
-      </h1>
+<script>
 
-      <p class="typing text-lg sm:text-xl md:text-2xl mx-auto text-white mb-8">
-        Generasi Ahli Jaringan Masa Depan
-      </p>
+  // PARTICLES
+  particlesJS("particles-js", {
 
-    </div>
+    particles: {
 
-  </section>
+      number: {
+        value: 80
+      },
 
-  <!-- Footer -->
-  <footer class="bg-slate-950 text-center py-6 border-t border-cyan-500">
-    <p>© 2026 TJKT SMK MODERN</p>
-  </footer>
+      color: {
+        value: "#06b6d4"
+      },
 
-  <!-- AOS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+      shape: {
+        type: "circle"
+      },
 
-  <script>
+      opacity: {
+        value: 0.5
+      },
 
-    AOS.init();
+      size: {
+        value: 3
+      },
 
-    // Loading
-    window.addEventListener('load', () => {
+      move: {
+        enable: true,
+        speed: 2
+      },
 
-      setTimeout(() => {
-        document.getElementById('loader').style.display = 'none';
-      }, 1500);
-
-    });
-
-    // Clock
-    function updateClock(){
-
-      const now = new Date();
-
-      document.getElementById('clock')
-      ?.innerText =
-      now.toLocaleTimeString('id-ID');
-
-    }
-
-    setInterval(updateClock, 1000);
-
-    // Music
-    const music =
-    document.getElementById('bgMusic');
-
-    const musicBtn =
-    document.getElementById('musicBtn');
-
-    let playing = false;
-
-    if(musicBtn){
-
-      musicBtn.onclick = () => {
-
-        if(!playing){
-
-          music.play();
-          playing = true;
-
-        }else{
-
-          music.pause();
-          playing = false;
-
-        }
-
+      line_linked: {
+        enable: true,
+        color: "#06b6d4"
       }
 
     }
 
-    // Cursor
-    const cursor =
-    document.getElementById('cursor');
+  });
 
-    const blur =
-    document.getElementById('cursorBlur');
+  // LOGIN SYSTEM
 
-    document.addEventListener('mousemove', e => {
+  const loginForm =
+  document.getElementById('loginForm');
 
-      cursor.style.left =
-      e.clientX + 'px';
+  const loginModal =
+  document.getElementById('loginModal');
 
-      cursor.style.top =
-      e.clientY + 'px';
+  const loginError =
+  document.getElementById('loginError');
 
-      blur.style.left =
-      e.clientX - 150 + 'px';
+  const logoutBtn =
+  document.getElementById('logoutBtn');
 
-      blur.style.top =
-      e.clientY - 150 + 'px';
+  loginForm.addEventListener('submit', e => {
 
-    });
+    e.preventDefault();
 
-    // Particles
-    particlesJS("particles-js", {
+    const username =
+    document.getElementById('username').value;
 
-      particles: {
+    const password =
+    document.getElementById('password').value;
 
-        number: {
-          value: 80
-        },
-
-        color: {
-          value: "#06b6d4"
-        },
-
-        shape: {
-          type: "circle"
-        },
-
-        opacity: {
-          value: 0.5
-        },
-
-        size: {
-          value: 3
-        },
-
-        move: {
-          enable: true,
-          speed: 2
-        },
-
-        line_linked: {
-          enable: true,
-          color: "#06b6d4"
-        }
-
-      }
-
-    });
-
-    // LOGIN SYSTEM
-
-    const loginForm =
-    document.getElementById('loginForm');
-
-    const loginModal =
-    document.getElementById('loginModal');
-
-    const loginError =
-    document.getElementById('loginError');
-
-    const logoutBtn =
-    document.getElementById('logoutBtn');
-
-    loginForm.addEventListener('submit', e => {
-
-      e.preventDefault();
-
-      const username =
-      document.getElementById('username').value;
-
-      const password =
-      document.getElementById('password').value;
-
-      if(username === 'admin'
-        && password === '12345'){
-
-        loginModal.style.display = 'none';
-
-        localStorage.setItem(
-          'tjktLogin',
-          'true'
-        );
-
-        logoutBtn.classList.remove('hidden');
-
-      }else{
-
-        loginError.classList.remove('hidden');
-
-      }
-
-    });
-
-    // AUTO LOGIN
-    if(localStorage.getItem('tjktLogin')
-    === 'true'){
+    // LOGIN
+    if(username === 'TJKT-28'
+      && password === 'BERSAMA123'){
 
       loginModal.style.display = 'none';
 
+      localStorage.setItem(
+        'tjktLogin',
+        'true'
+      );
+
       logoutBtn.classList.remove('hidden');
 
-    }
+    }else{
 
-    // LOGOUT
-    logoutBtn.onclick = () => {
-
-      localStorage.removeItem('tjktLogin');
-
-      location.reload();
+      loginError.classList.remove('hidden');
 
     }
 
-  </script>
+  });
+
+  // AUTO LOGIN
+  if(localStorage.getItem('tjktLogin')
+  === 'true'){
+
+    loginModal.style.display = 'none';
+
+    logoutBtn.classList.remove('hidden');
+
+  }
+
+  // LOGOUT
+  logoutBtn.onclick = () => {
+
+    localStorage.removeItem('tjktLogin');
+
+    location.reload();
+
+  }
+
+</script>
 
 </body>
 </html>
